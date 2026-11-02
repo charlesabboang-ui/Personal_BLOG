@@ -102,7 +102,7 @@ const UI = {
   readBlog:"Read the posts",contactMe:"Contact me",latest:"Latest posts",all:"All posts",back:"← Back",
   cards:[["My Life in Trieste","Stories from an international student at ICTP.","life"],["Maths","University-level notes, with proofs.","maths"],["Research","Differential geometry and publications.","research"]],
   aboutTitle:"About",
-  aboutBody:["I am Charles De Gaule Abboang Aveved, a Cameroonian mathematician. I studied at the University of Maroua and at AIMS Cameroon, and I am following the Postgraduate Diploma in Mathematics at ICTP in Trieste.","My topics: differential geometry, geometric analysis, Lorentzian and semi-Riemannian manifolds, curvature, applied mathematics and scientific computing.","I built MathClair, a voice-interactive AI mathematics tutor that helps secondary-school students learn at home. It won 1st Prize at AIMS Innovation Week 2026.","Languages: French (native), English (professional)."],
+  aboutBody:["I am Charles De Gaule Abboang Aveved, a Cameroonian. I studied at the University of Maroua and at AIMS Cameroon, and I am following the Postgraduate Diploma in Mathematics at ICTP in Trieste.","My topics: differential geometry, geometric analysis, Lorentzian and semi-Riemannian manifolds, curvature, applied mathematics and scientific computing.","I built MathClair, a voice-interactive AI mathematics tutor that helps secondary-school students learn at home. It won 1st Prize at AIMS Innovation Week 2026.","Languages: French (native), English (professional)."],
   journeyTitle:"My journey",
   researchTitle:"Research",interests:"Interests",
   interestList:["Differential geometry and geometric analysis","Lorentzian and semi-Riemannian manifolds","Lightlike (null) submanifolds","Torse-forming vector fields, Ricci solitons, curvature","Geometric differential operators"],
@@ -129,7 +129,7 @@ const item = p => `<a class="post-item" href="#post-${p.id}"><span class="meta">
 function render(){
   const t = UI[lang], h = decodeURIComponent(location.hash.slice(1)) || "home";
   document.documentElement.lang = lang;
-  const keys = ["home","life","maths","journey","about","contact"];
+  const keys = ["home","about","life","maths","journey"];
   $("nav").innerHTML = keys.map(k=>`<a href="#${k==="home"?"":k}" ${(h===k||(h.startsWith("post-")&&(POSTS.find(p=>"post-"+p.id===h)||{}).cat===k))?'class="on"':''}>${t.nav[k]}</a>`).join("") + `<button class="lang" id="lang">${lang==="fr"?"EN":"FR"}</button>`;
   $("lang").onclick = () => { lang = lang==="fr"?"en":"fr"; try{localStorage.setItem("lang",lang);}catch(e){} render(); };
   $("foot").textContent = t.foot;
