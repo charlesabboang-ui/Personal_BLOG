@@ -116,7 +116,8 @@ const PUBS = [
  ["Abboang Aveved, C. D. G. (2026). Geometric Differential Operators and Changes of Metric. Master’s Essay, AIMS Cameroon.","https://www.researchgate.net/publication/414502810"],
  ["Abboang Aveved, C. D. G. (2025). Torse-Forming Vector Fields on Lightlike Hypersurfaces. Master’s Thesis, University of Maroua.","https://www.researchgate.net/publication/414471578"]
 ];
-const EMAIL = "charlesabboang@aims-cameroon.org", "cabboang@ictp.it";
+const EMAIL1 = "charlesabboang@aims-cameroon.org";
+const EMAIL2 =  "cabboang@ictp.it";
 const SITE = "https://sites.google.com/aims-cameroon.org/charlesabboang";
 let lang = "fr";
 try{ lang = localStorage.getItem("lang") || ((navigator.language||"fr").startsWith("en") ? "en" : "fr"); }catch(e){}
@@ -148,7 +149,7 @@ function render(){
     v.innerHTML = `<p class="meta" style="margin-top:32px"><span class="tag">${t_(p.cat)}</span> · ${fmt(p.date)}</p><h1 style="margin-top:8px">${esc(c.title)}</h1><article>${c.body.map(x=>x.startsWith("EQ:")?`<div class="eq">${esc(x.slice(3))}</div>`:x.startsWith("H:")?`<h2>${esc(x.slice(2))}</h2>`:`<p>${esc(x)}</p>`).join("")}</article><a class="back" href="#${p.cat}">${t.back}</a>`;
     window.scrollTo(0,0);
   } else if(h==="contact"){
-    v.innerHTML = `<h1>${t.contactTitle}</h1><article><p>${t.contactText}</p><p><a class="btn" href="mailto:${EMAIL}">${EMAIL}</a></p><h2>${t.links}</h2><ul class="clean"><li><a href="${SITE}" target="_blank" rel="noopener">Google Sites</a></li><li><a href="${PUBS[1][1]}" target="_blank" rel="noopener">ResearchGate</a></li></ul></article>${back}`;
+    v.innerHTML = `<h1>${t.contactTitle}</h1><article><p>${t.contactText}</p><p><a class="btn" href="mailto:${EMAIL}">${EMAIL}</a></p><p><a class="btn alt" href="mailto:${EMAIL2}">${EMAIL2}</a></p><h2>${t.links}</h2><ul class="clean"><li><a href="${SITE}" target="_blank" rel="noopener">Google Sites</a></li><li><a href="${PUBS[1][1]}" target="_blank" rel="noopener">ResearchGate</a></li></ul></article>${back}`;
   } else {
     v.innerHTML = `<section class="hero2"><img src="${PHOTO}" alt="Charles Abboang" width="120" height="120"><h1>Charles De Gaule<br>Abboang Aveved</h1><p class="meta">${t.role}</p><p class="lead">${esc(t.intro)}</p><a class="btn" href="#life">${t.readBlog}</a><a class="btn alt" href="#contact">${t.contactMe}</a></section><div class="grid">${t.cards.map(c=>`<a class="card" href="#${c[2]}"><h3>${c[0]}</h3><p>${c[1]}</p></a>`).join("")}</div><h2 style="margin-top:36px">${t.latest}</h2>${POSTS.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map(item).join("")}<a class="back" href="#blog">${t.all} →</a>`;
   }
