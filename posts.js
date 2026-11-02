@@ -1,10 +1,10 @@
 // To publish a post: copy one {id:...} block, change id (no spaces), cat ("life" or "maths"), date and the texts.
 // FR is optional: if a post has only "en", it is shown in both languages. Maths: use $...$ inline, EQ:$$...$$ for display, H:Title for a heading.
 const POSTS = [
- {id:"welcome",cat:"life",date:"2025-11-01",
+ {id:"welcome",cat:"life",date:new Date().toLocaleDateString("en-CA"),
   en:{title:"Welcome to my blog",body:["This blog has two parts. In “My Life in Trieste” I write about being an international student at ICTP: the city, the campus, daily life and what I learn along the way.","In “Maths” I publish university-level notes: clear statements, complete proofs and examples, on analysis, algebra and geometry.","Every post is written in English, and some are also in French. Use the language button at the top to switch."]},
   fr:{title:"Bienvenue sur mon blog",body:["Ce blog a deux parties. Dans « Ma vie à Trieste », je raconte ma vie d’étudiant international à l’ICTP : la ville, le campus, le quotidien et ce que j’apprends.","Dans « Maths », je publie des notes de niveau universitaire : énoncés clairs, preuves complètes et exemples, en analyse, algèbre et géométrie.","Les articles sont rédigés en anglais, certains aussi en français. Le bouton de langue en haut permet de changer."]}},
- {id:"banach-fixed-point",cat:"maths",date:"2026-11-10",
+ {id:"banach-fixed-point",cat:"maths",date:"2026-09-10",
   en:{title:"The Banach fixed-point theorem, with a proof and an application to ODEs",body:[
    "H:Statement",
    "Let $(X,d)$ be a non-empty complete metric space and $T:X\\to X$ a contraction, that is, there is $q\\in[0,1)$ with",
