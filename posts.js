@@ -76,13 +76,8 @@ const POSTS = [
    "H:Remarks and exercises",
    "1. A circle of latitude $\\theta=\\theta_0\\ne\\pi/2$ is not a geodesic: with $\\dot\\theta=0$, the first equation would need $\\sin\\theta_0\\cos\\theta_0\\,\\dot\\varphi^2=0$.",
    "2. Show that two distinct points of $S^2$ that are not antipodal are joined by a unique shortest geodesic, and that antipodal points are joined by infinitely many.",
-   "3. Compute the Gaussian curvature $K=1$ from the Christoffel symbols above, using $K=-\\dfrac{1}{\\sqrt{G}}\\dfrac{\\partial^2\\sqrt{G}}{\\partial\\theta^2}$ with $G=\\sin^2\\theta$."]}}
-];
-
-
-// // Differential Geometry 
-
-{id:"dg-00-outline",cat:"maths",date:"2026-11-03",
+   "3. Compute the Gaussian curvature $K=1$ from the Christoffel symbols above, using $K=-\\dfrac{1}{\\sqrt{G}}\\dfrac{\\partial^2\\sqrt{G}}{\\partial\\theta^2}$ with $G=\\sin^2\\theta$."]}},
+ {id:"dg-00-outline",cat:"maths",date:"2026-11-03",
   en:{title:"Differential Geometry, Lesson 0: course outline",body:[
    "This course introduces the differential geometry of curves and surfaces in $\\mathbb{R}^3$. It leads to the Theorema Egregium and the Gauss–Bonnet theorem, and prepares the way for Riemannian geometry, the setting of my own research.",
    "H:Prerequisites",
@@ -102,12 +97,12 @@ const POSTS = [
  {id:"dg-01-curves",cat:"maths",date:"2026-11-04",
   en:{title:"Differential Geometry, Lesson 1: regular curves and arc length",body:[
    "H:Definitions",
-   "A **parametrized curve** is a smooth map $\\alpha:I\\to\\mathbb{R}^3$, where $I$ is an interval. It is **regular** if $\\alpha'(t)\\neq 0$ for all $t\\in I$. The vector $\\alpha'(t)$ is the velocity and $|\\alpha'(t)|$ the speed.",
-   "The **arc length** from $t_0$ is",
+   "A parametrized curve is a smooth map $\\alpha:I\\to\\mathbb{R}^3$, where $I$ is an interval. It is regular if $\\alpha'(t)\\neq 0$ for all $t\\in I$. The vector $\\alpha'(t)$ is the velocity and $|\\alpha'(t)|$ the speed.",
+   "The arc length from $t_0$ is",
    "EQ:$$s(t)=\\int_{t_0}^{t}|\\alpha'(u)|\\,du.$$",
    "H:Proposition (arc-length parametrization)",
    "If $\\alpha$ is regular, there is a reparametrization $\\beta(s)=\\alpha(t(s))$ with $|\\beta'(s)|=1$ for all $s$.",
-   "**Proof.** By the fundamental theorem of calculus, $s'(t)=|\\alpha'(t)|>0$, because $\\alpha$ is regular and $|\\alpha'|$ is smooth where it is non-zero. So $s$ is a strictly increasing smooth bijection from $I$ onto an interval $J$, with smooth inverse $t=t(s)$ by the inverse function theorem. Put $\\beta=\\alpha\\circ t$. By the chain rule, $\\beta'(s)=\\alpha'(t(s))\\,t'(s)=\\alpha'(t)/|\\alpha'(t)|$, which has norm $1$. $\\square$",
+   "Proof. By the fundamental theorem of calculus, $s'(t)=|\\alpha'(t)|>0$, because $\\alpha$ is regular and $|\\alpha'|$ is smooth where it is non-zero. So $s$ is a strictly increasing smooth bijection from $I$ onto an interval $J$, with smooth inverse $t=t(s)$ by the inverse function theorem. Put $\\beta=\\alpha\\circ t$. By the chain rule, $\\beta'(s)=\\alpha'(t(s))\\,t'(s)=\\alpha'(t)/|\\alpha'(t)|$, which has norm $1$. $\\square$",
    "From now on we often assume curves are parametrized by arc length (called unit-speed curves).",
    "H:Example: the circular helix",
    "Let $\\alpha(t)=(a\\cos t,\\,a\\sin t,\\,bt)$ with $a>0$. Then $|\\alpha'(t)|=\\sqrt{a^2+b^2}=:c$ is constant, so $s=ct$ and",
@@ -119,12 +114,12 @@ const POSTS = [
    "1. Show that $\\alpha(t)=(t-\\sin t,\\,1-\\cos t)$ (the cycloid) is not regular, and find the values of $t$ where regularity fails.\n2. Compute the arc length of $\\alpha(t)=(t,\\,\\cosh t)$ on $[0,1]$ (the catenary) and give its arc-length parametrization.\n3. Show that the arc length of a regular curve does not depend on the (orientation-preserving) reparametrization used to compute it."]},
   fr:{title:"Géométrie différentielle, Leçon 1 : courbes régulières et longueur d’arc",body:[
    "H:Définitions",
-   "Une **courbe paramétrée** est une application lisse $\\alpha:I\\to\\mathbb{R}^3$, où $I$ est un intervalle. Elle est **régulière** si $\\alpha'(t)\\neq 0$ pour tout $t\\in I$. Le vecteur $\\alpha'(t)$ est la vitesse, et $|\\alpha'(t)|$ sa norme.",
-   "La **longueur d’arc** à partir de $t_0$ est",
+   "Une courbe paramétrée est une application lisse $\\alpha:I\\to\\mathbb{R}^3$, où $I$ est un intervalle. Elle est régulière si $\\alpha'(t)\\neq 0$ pour tout $t\\in I$. Le vecteur $\\alpha'(t)$ est la vitesse, et $|\\alpha'(t)|$ sa norme.",
+   "La longueur d’arc à partir de $t_0$ est",
    "EQ:$$s(t)=\\int_{t_0}^{t}|\\alpha'(u)|\\,du.$$",
    "H:Proposition (paramétrage par la longueur d’arc)",
    "Si $\\alpha$ est régulière, il existe un reparamétrage $\\beta(s)=\\alpha(t(s))$ avec $|\\beta'(s)|=1$ pour tout $s$.",
-   "**Preuve.** D’après le théorème fondamental du calcul, $s'(t)=|\\alpha'(t)|>0$ car $\\alpha$ est régulière. Donc $s$ est une bijection lisse strictement croissante de $I$ sur un intervalle $J$, d’inverse lisse $t=t(s)$ par le théorème d’inversion locale. Posons $\\beta=\\alpha\\circ t$. Par la règle de dérivation composée, $\\beta'(s)=\\alpha'(t(s))\\,t'(s)=\\alpha'(t)/|\\alpha'(t)|$, de norme $1$. $\\square$",
+   "Preuve. D’après le théorème fondamental du calcul, $s'(t)=|\\alpha'(t)|>0$ car $\\alpha$ est régulière. Donc $s$ est une bijection lisse strictement croissante de $I$ sur un intervalle $J$, d’inverse lisse $t=t(s)$ par le théorème d’inversion locale. Posons $\\beta=\\alpha\\circ t$. Par la règle de dérivation composée, $\\beta'(s)=\\alpha'(t(s))\\,t'(s)=\\alpha'(t)/|\\alpha'(t)|$, de norme $1$. $\\square$",
    "Désormais, on suppose souvent les courbes paramétrées par la longueur d’arc (courbes à vitesse unité).",
    "H:Exemple : l’hélice circulaire",
    "Soit $\\alpha(t)=(a\\cos t,\\,a\\sin t,\\,bt)$ avec $a>0$. Alors $|\\alpha'(t)|=\\sqrt{a^2+b^2}=:c$ est constant, donc $s=ct$ et",
@@ -138,11 +133,11 @@ const POSTS = [
   en:{title:"Differential Geometry, Lesson 2: curvature, torsion and the Frenet frame",body:[
    "Let $\\alpha:I\\to\\mathbb{R}^3$ be a unit-speed curve, so $|\\alpha'|=1$.",
    "H:Definitions",
-   "The **tangent vector** is $T=\\alpha'$. The **curvature** is $\\kappa(s)=|\\alpha''(s)|=|T'(s)|$. Where $\\kappa>0$, define the **normal** $N=T'/\\kappa$ and the **binormal** $B=T\\times N$. By the Lemma of Lesson 1, $T'\\perp T$, so $(T,N,B)$ is a positively oriented orthonormal frame, the **Frenet frame**.",
+   "The tangent vector is $T=\\alpha'$. The curvature is $\\kappa(s)=|\\alpha''(s)|=|T'(s)|$. Where $\\kappa>0$, define the normal $N=T'/\\kappa$ and the binormal $B=T\\times N$. By the Lemma of Lesson 1, $T'\\perp T$, so $(T,N,B)$ is a positively oriented orthonormal frame, the Frenet frame.",
    "H:Theorem (Frenet–Serret equations)",
-   "There is a smooth function $\\tau$, the **torsion**, such that",
+   "There is a smooth function $\\tau$, the torsion, such that",
    "EQ:$$T'=\\kappa N,\\qquad N'=-\\kappa T+\\tau B,\\qquad B'=-\\tau N.$$",
-   "**Proof.** The first equation is the definition of $N$. Since $|B|=1$, $B'\\perp B$. Also $B\\cdot T=0$ gives $B'\\cdot T=-B\\cdot T'=-\\kappa\\,B\\cdot N=0$. Hence $B'$ is parallel to $N$, and we define $\\tau$ by $B'=-\\tau N$.",
+   "Proof. The first equation is the definition of $N$. Since $|B|=1$, $B'\\perp B$. Also $B\\cdot T=0$ gives $B'\\cdot T=-B\\cdot T'=-\\kappa\\,B\\cdot N=0$. Hence $B'$ is parallel to $N$, and we define $\\tau$ by $B'=-\\tau N$.",
    "For $N'$, expand in the frame. We have $N'\\cdot N=0$ since $|N|=1$. From $N\\cdot T=0$: $N'\\cdot T=-N\\cdot T'=-\\kappa$. From $N\\cdot B=0$: $N'\\cdot B=-N\\cdot B'=\\tau$. So $N'=-\\kappa T+\\tau B$. $\\square$",
    "The curvature measures how fast the curve leaves its tangent line. The torsion measures how fast it leaves its osculating plane, spanned by $T$ and $N$.",
    "H:Example: the helix",
@@ -151,17 +146,17 @@ const POSTS = [
    "Both are constant. For $b=0$ we recover a circle of radius $a$, with $\\kappa=1/a$ and $\\tau=0$.",
    "H:Proposition (planar curves)",
    "A unit-speed curve with $\\kappa>0$ is contained in a plane if and only if $\\tau\\equiv0$.",
-   "**Proof of ($\\Leftarrow$).** If $\\tau\\equiv 0$, then $B'=0$, so $B=B_0$ is constant. Then $(\\alpha\\cdot B_0)'=T\\cdot B_0=0$, so $\\alpha\\cdot B_0$ is constant: the curve lies in a plane orthogonal to $B_0$. The converse is Exercise 2. $\\square$",
+   "Proof of ($\\Leftarrow$). If $\\tau\\equiv 0$, then $B'=0$, so $B=B_0$ is constant. Then $(\\alpha\\cdot B_0)'=T\\cdot B_0=0$, so $\\alpha\\cdot B_0$ is constant: the curve lies in a plane orthogonal to $B_0$. The converse is Exercise 2. $\\square$",
    "H:Exercises",
    "1. Verify the formulas $\\kappa=a/(a^2+b^2)$ and $\\tau=b/(a^2+b^2)$ by computing $B$ and $B'$ for the helix.\n2. Prove the direction ($\\Rightarrow$) of the proposition: if the curve lies in a plane, then $\\tau\\equiv0$.\n3. Show that a unit-speed curve with $\\kappa$ constant and positive and $\\tau\\equiv 0$ is a circle of radius $1/\\kappa$. (Hint: show that $\\alpha+\\frac1\\kappa N$ is constant.)"]},
   fr:{title:"Géométrie différentielle, Leçon 2 : courbure, torsion et repère de Frenet",body:[
    "Soit $\\alpha:I\\to\\mathbb{R}^3$ une courbe à vitesse unité, donc $|\\alpha'|=1$.",
    "H:Définitions",
-   "Le **vecteur tangent** est $T=\\alpha'$. La **courbure** est $\\kappa(s)=|\\alpha''(s)|=|T'(s)|$. Là où $\\kappa>0$, on définit la **normale** $N=T'/\\kappa$ et la **binormale** $B=T\\times N$. D’après le lemme de la leçon 1, $T'\\perp T$, donc $(T,N,B)$ est un repère orthonormé direct, le **repère de Frenet**.",
+   "Le vecteur tangent est $T=\\alpha'$. La courbure est $\\kappa(s)=|\\alpha''(s)|=|T'(s)|$. Là où $\\kappa>0$, on définit la normale $N=T'/\\kappa$ et la binormale $B=T\\times N$. D’après le lemme de la leçon 1, $T'\\perp T$, donc $(T,N,B)$ est un repère orthonormé direct, le repère de Frenet.",
    "H:Théorème (équations de Frenet–Serret)",
-   "Il existe une fonction lisse $\\tau$, la **torsion**, telle que",
+   "Il existe une fonction lisse $\\tau$, la torsion, telle que",
    "EQ:$$T'=\\kappa N,\\qquad N'=-\\kappa T+\\tau B,\\qquad B'=-\\tau N.$$",
-   "**Preuve.** La première équation est la définition de $N$. Comme $|B|=1$, $B'\\perp B$. De plus, $B\\cdot T=0$ donne $B'\\cdot T=-B\\cdot T'=-\\kappa\\,B\\cdot N=0$. Donc $B'$ est colinéaire à $N$, et on définit $\\tau$ par $B'=-\\tau N$.",
+   "Preuve. La première équation est la définition de $N$. Comme $|B|=1$, $B'\\perp B$. De plus, $B\\cdot T=0$ donne $B'\\cdot T=-B\\cdot T'=-\\kappa\\,B\\cdot N=0$. Donc $B'$ est colinéaire à $N$, et on définit $\\tau$ par $B'=-\\tau N$.",
    "Pour $N'$, on le décompose dans le repère. On a $N'\\cdot N=0$ car $|N|=1$. De $N\\cdot T=0$ : $N'\\cdot T=-N\\cdot T'=-\\kappa$. De $N\\cdot B=0$ : $N'\\cdot B=-N\\cdot B'=\\tau$. Donc $N'=-\\kappa T+\\tau B$. $\\square$",
    "La courbure mesure la vitesse à laquelle la courbe quitte sa tangente. La torsion mesure la vitesse à laquelle elle quitte son plan osculateur, engendré par $T$ et $N$.",
    "H:Exemple : l’hélice",
@@ -170,7 +165,7 @@ const POSTS = [
    "Les deux sont constantes. Pour $b=0$, on retrouve un cercle de rayon $a$, avec $\\kappa=1/a$ et $\\tau=0$.",
    "H:Proposition (courbes planes)",
    "Une courbe à vitesse unité avec $\\kappa>0$ est contenue dans un plan si et seulement si $\\tau\\equiv0$.",
-   "**Preuve de ($\\Leftarrow$).** Si $\\tau\\equiv 0$, alors $B'=0$, donc $B=B_0$ est constant. Alors $(\\alpha\\cdot B_0)'=T\\cdot B_0=0$, donc $\\alpha\\cdot B_0$ est constant : la courbe est dans un plan orthogonal à $B_0$. La réciproque est l’exercice 2. $\\square$",
+   "Preuve de ($\\Leftarrow$). Si $\\tau\\equiv 0$, alors $B'=0$, donc $B=B_0$ est constant. Alors $(\\alpha\\cdot B_0)'=T\\cdot B_0=0$, donc $\\alpha\\cdot B_0$ est constant : la courbe est dans un plan orthogonal à $B_0$. La réciproque est l’exercice 2. $\\square$",
    "H:Exercices",
    "1. Vérifier les formules $\\kappa=a/(a^2+b^2)$ et $\\tau=b/(a^2+b^2)$ en calculant $B$ et $B'$ pour l’hélice.\n2. Démontrer le sens ($\\Rightarrow$) de la proposition : si la courbe est dans un plan, alors $\\tau\\equiv0$.\n3. Montrer qu’une courbe à vitesse unité avec $\\kappa$ constante et strictement positive et $\\tau\\equiv 0$ est un cercle de rayon $1/\\kappa$. (Indice : montrer que $\\alpha+\\frac1\\kappa N$ est constant.)"]}}
 ];
