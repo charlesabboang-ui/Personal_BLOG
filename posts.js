@@ -1,7 +1,7 @@
 // To publish a post: copy one {id:...} block, change id (no spaces), cat ("life" or "maths"), date and the texts.
 // FR is optional: if a post has only "en", it is shown in both languages. Maths: use $...$ inline, EQ:$$...$$ for display, H:Title for a heading.
 const POSTS = [
- {id:"welcome",cat:"life",date:"2026-11-01",
+ {id:"welcome",cat:"life",date:"2025-11-01",
   en:{title:"Welcome to my blog",body:["This blog has two parts. In “My Life in Trieste” I write about being an international student at ICTP: the city, the campus, daily life and what I learn along the way.","In “Maths” I publish university-level notes: clear statements, complete proofs and examples, on analysis, algebra and geometry.","Every post is written in English, and some are also in French. Use the language button at the top to switch."]},
   fr:{title:"Bienvenue sur mon blog",body:["Ce blog a deux parties. Dans « Ma vie à Trieste », je raconte ma vie d’étudiant international à l’ICTP : la ville, le campus, le quotidien et ce que j’apprends.","Dans « Maths », je publie des notes de niveau universitaire : énoncés clairs, preuves complètes et exemples, en analyse, algèbre et géométrie.","Les articles sont rédigés en anglais, certains aussi en français. Le bouton de langue en haut permet de changer."]}},
  {id:"banach-fixed-point",cat:"maths",date:"2026-11-10",
@@ -22,7 +22,7 @@ const POSTS = [
    "So $T$ is a contraction, and Banach gives a unique local solution. The iteration $y_{n+1}=Ty_n$ is exactly Picard iteration.",
    "H:Exercise",
    "Show that the hypothesis $q<1$ cannot be weakened to $d(Tx,Ty)<d(x,y)$ for $x\\ne y$: find a complete space and a map satisfying the weaker condition with no fixed point."]}},
- {id:"torse-forming",cat:"maths",date:"2026-11-17",
+ {id:"torse-forming",cat:"maths",date:"2026-01-17",
   en:{title:"What is a torse-forming vector field?",body:[
    "On a manifold with Levi-Civita connection $\\nabla$, a vector field $v$ is torse-forming if for every vector field $X$:",
    "EQ:$$\\nabla_X v = f\\,X+\\omega(X)\\,v,$$",
@@ -35,7 +35,7 @@ const POSTS = [
    "où $f$ est une fonction lisse et $\\omega$ une 1-forme. Quand on dérive $v$ dans la direction $X$, le résultat ne contient que $X$ et la direction de $v$.",
    "Quand $\\omega=0$, ce sont les champs concircular. Leur existence contraint fortement la géométrie, ce que j’étudie sur les hypersurfaces nulles (lightlike).",
    "Dans un prochain article, je montrerai un exemple sur la sphère."]}},
- {id:"my-flight",cat:"life",date:"2026-11-02",
+ {id:"my-flight",cat:"life",date:"2026-09-02",
   fr:{title:"Mon voyage en avion",body:["« Où, comme j’aime l’appeler… »\nle moment où je remets ma vie entre les mains d’un inconnu qui s’appelle Pilote.",
 "On arrive à l’aéroport.\nEt on va au terminal.\nTout un symbole.\nJ’arrive en avance…\nmais dans ma tête, je suis déjà en retard.\nOn ne sait jamais vraiment à quelle heure arriver pour prendre un avion.\nRésultat : j’arrive 3 heures avant.\nEt…\nj’attends.",
 "Au moment du contrôle, je sais que je n’ai rien fait…\nmais pourtant, je stresse.\nEt je deviens suspect.\nMon visage dit :\n« J’ai sûrement de la dr*gue quelque part. »",
@@ -56,7 +56,7 @@ const POSTS = [
 "Finally, we landed.\nThe moment the plane touched the ground, everyone stood up at once.\nTo wait standing for ten minutes.\nWhich is the same as sitting…\nbut more annoying.\nClearly, some people like living in difficulty.",
 "You finally step out…\nFREE!\nAnd you realize how lucky you are to be alive.\nALIVE!\nI’m alive!\nThe problem in all this…\nis that there’s a return trip.\nAnd then we start again.",
 "Cameroon → Addis Ababa → Rome → Trieste → @ICTP"]}},
- {id:"geodesics-sphere",cat:"maths",date:"2026-12-01",
+ {id:"geodesics-sphere",cat:"maths",date:"2026-10-01",
   en:{title:"Geodesics on the sphere: why they are great circles",body:[
    "H:Setting",
    "Parametrize the unit sphere $S^2$ by $\\theta\\in(0,\\pi)$ (colatitude) and $\\varphi$ (longitude). The induced metric is",
