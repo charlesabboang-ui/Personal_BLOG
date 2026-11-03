@@ -116,6 +116,7 @@ const PUBS = [
  ["Abboang Aveved, C. D. G. (2026). Geometric Differential Operators and Changes of Metric. Master’s Essay, AIMS Cameroon.","https://www.researchgate.net/publication/414502810"],
  ["Abboang Aveved, C. D. G. (2025). Torse-Forming Vector Fields on Lightlike Hypersurfaces. Master’s Thesis, University of Maroua.","https://www.researchgate.net/publication/414471578"]
 ];
+ const tint = s => s.replace(/\{(red|blue|green|orange|purple)\|(.+?)\}/g,(m,c,t)=>`<span style="color:${{red:"#d6336c",blue:"#1c7ed6",green:"#2f9e44",orange:"#e8590c",purple:"#7048e8"}[c]}">${t}</span>`);
 const EMAIL1 = "charles.abboang@aims-cameroon.org";
 const EMAIL2 =  "cabboang@ictp.it";
 const SITE = "https://sites.google.com/aims-cameroon.org/charlesabboang";
