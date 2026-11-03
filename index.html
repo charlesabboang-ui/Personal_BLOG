@@ -137,7 +137,7 @@ function render(){
   const v = $("view"), back = `<a class="back" href="#">${t.back}</a>`;
   let title = "Charles Abboang";
   if(h==="about"){
-    v.innerHTML = `<h1>${t.aboutTitle}</h1><article>${t.aboutBody.map(p=>`<p>${esc(x)}</p>`).join("")}</article>${back}`;
+    v.innerHTML = `<h1>${t.aboutTitle}</h1><article>${t.aboutBody.map(p=>`<p>${esc(p)}</p>`).join("")}</article>${back}`;
   } else if(h==="journey"){
     v.innerHTML = `<h1>${t.journeyTitle}</h1><ol class="tl">${JOURNEY.map(j=>`<li><span class="meta">${j.d}</span><strong>${(j[lang][0])}</strong><br><span style="color:var(--muted)">${(j[lang][1])}</span></li>`).join("")}</ol>${back}`;
   } else if(h==="research"){
