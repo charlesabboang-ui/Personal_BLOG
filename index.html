@@ -116,7 +116,6 @@ const PUBS = [
  ["Abboang Aveved, C. D. G. (2026). Geometric Differential Operators and Changes of Metric. Master’s Essay, AIMS Cameroon.","https://www.researchgate.net/publication/414502810"],
  ["Abboang Aveved, C. D. G. (2025). Torse-Forming Vector Fields on Lightlike Hypersurfaces. Master’s Thesis, University of Maroua.","https://www.researchgate.net/publication/414471578"]
 ];
- const tint = s => s.replace(/\{(red|blue|green|orange|purple)\|(.+?)\}/g,(m,c,t)=>`<span style="color:${{red:"#d6336c",blue:"#1c7ed6",green:"#2f9e44",orange:"#e8590c",purple:"#7048e8"}[c]}">${t}</span>`);
 const EMAIL1 = "charles.abboang@aims-cameroon.org";
 const EMAIL2 =  "cabboang@ictp.it";
 const SITE = "https://sites.google.com/aims-cameroon.org/charlesabboang";
@@ -138,11 +137,11 @@ function render(){
   const v = $("view"), back = `<a class="back" href="#">${t.back}</a>`;
   let title = "Charles Abboang";
   if(h==="about"){
-    v.innerHTML = `<h1>${t.aboutTitle}</h1><article>${t.aboutBody.map(p=>`<p>${tint(esc(x))}</p>`).join("")}</article>${back}`;
+    v.innerHTML = `<h1>${t.aboutTitle}</h1><article>${t.aboutBody.map(p=>`<p>${esc(x)}</p>`).join("")}</article>${back}`;
   } else if(h==="journey"){
-    v.innerHTML = `<h1>${t.journeyTitle}</h1><ol class="tl">${JOURNEY.map(j=>`<li><span class="meta">${j.d}</span><strong>${esc(j[lang][0])}</strong><br><span style="color:var(--muted)">${esc(j[lang][1])}</span></li>`).join("")}</ol>${back}`;
+    v.innerHTML = `<h1>${t.journeyTitle}</h1><ol class="tl">${JOURNEY.map(j=>`<li><span class="meta">${j.d}</span><strong>${(j[lang][0])}</strong><br><span style="color:var(--muted)">${(j[lang][1])}</span></li>`).join("")}</ol>${back}`;
   } else if(h==="research"){
-    v.innerHTML = `<h1>${t.researchTitle}</h1><article><h2>${t.interests}</h2><ul class="clean">${t.interestList.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>${t.summaries.map(s=>`<h2>${esc(s[0])}</h2><p>${esc(s[1])}</p>`).join("")}<h2>${t.pubs}</h2><ul class="clean">${PUBS.map(p=>`<li><a href="${p[1]}" target="_blank" rel="noopener">${esc(p[0])}</a></li>`).join("")}</ul></article>${back}`;
+    v.innerHTML = `<h1>${t.researchTitle}</h1><article><h2>${t.interests}</h2><ul class="clean">${t.interestList.map(i=>`<li>${(i)}</li>`).join("")}</ul>${t.summaries.map(s=>`<h2>${esc(s[0])}</h2><p>${esc(s[1])}</p>`).join("")}<h2>${t.pubs}</h2><ul class="clean">${PUBS.map(p=>`<li><a href="${p[1]}" target="_blank" rel="noopener">${esc(p[0])}</a></li>`).join("")}</ul></article>${back}`;
   } else if(["blog","life","maths"].includes(h)){
     v.innerHTML = `<h1>${t.nav[h]}</h1>${POSTS.filter(p=>h==="blog"||p.cat===h).slice().sort((a,b)=>b.date.localeCompare(a.date)).map(item).join("")}`;
   } else if(h.startsWith("post-") && POSTS.some(p=>"post-"+p.id===h)){
