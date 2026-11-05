@@ -18,7 +18,7 @@ const REFS = [
  {key:"kemajou",text:"T. Kemajou Mbiakop and C. Abboang Aveved, Torse-forming vector fields and normalized null hypersurfaces, International Journal of Maps in Mathematics 9(1) (2026), 160–180.",url:"https://simadp.com/journalmim/article/view/429"}
 ];
 const POSTS = [
- {id:"welcome",cat:"life",date:new Date().toLocaleDateString("en-CA"),
+ {id:"welcome",cat:"life",
   en:{title:"Welcome to my blog",body:["This blog has two parts. In “My Life in Trieste” I write about being an international student at ICTP: the city, the campus, daily life and what I learn along the way.","In “Maths” I publish university-level notes: clear statements, complete proofs and examples, on analysis, algebra and geometry.","Every post is written in English, and some are also in French. Use the language button at the top to switch."]},
   fr:{title:"Bienvenue sur mon blog",body:["Ce blog a deux parties. Dans « Ma vie à Trieste », je raconte ma vie d’étudiant international à l’ICTP : la ville, le campus, le quotidien et ce que j’apprends.","Dans « Maths », je publie des notes de niveau universitaire : énoncés clairs, preuves complètes et exemples, en analyse, algèbre et géométrie.","Les articles sont rédigés en anglais, certains aussi en français. Le bouton de langue en haut permet de changer."]}},
  {id:"banach-fixed-point",cat:"maths",refs:["kreyszig","rudin","coddington"],date:"2026-09-10",
